@@ -17,10 +17,10 @@ def is_prime(n):
 
 
 def count_primes(start, end):
-    """Count all prime numbers in the given range (inclusive)."""
+    """Count all prime numbers in the given range (inclusive) that end with 1."""
     primes = []
     for num in range(start, end + 1):
-        if is_prime(num):
+        if is_prime(num) and num % 10 == 1:
             primes.append(num)
     return primes
 
@@ -31,6 +31,6 @@ if __name__ == "__main__":
 
     prime_numbers = count_primes(start, end)
 
-    print(f"Prime numbers from {start} to {end}:")
+    print(f"Prime numbers from {start} to {end} that end with 1:")
     print(prime_numbers)
-    print(f"\nTotal count: {len(prime_numbers)} prime numbers")
+    print(f"\nTotal count: {len(prime_numbers)} prime numbers ending in 1")
